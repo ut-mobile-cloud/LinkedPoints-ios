@@ -1,0 +1,265 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		25187FE612FAD59D00D6DC4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25187FE512FAD59D00D6DC4D /* UIKit.framework */; };
+		25187FE812FAD59D00D6DC4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25187FE712FAD59D00D6DC4D /* Foundation.framework */; };
+		25187FEA12FAD59D00D6DC4D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25187FE912FAD59D00D6DC4D /* CoreGraphics.framework */; };
+		25187FF012FAD59D00D6DC4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 25187FEE12FAD59D00D6DC4D /* InfoPlist.strings */; };
+		25187FF312FAD59D00D6DC4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25187FF212FAD59D00D6DC4D /* main.m */; };
+		25187FF612FAD59D00D6DC4D /* LinkedPointsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25187FF512FAD59D00D6DC4D /* LinkedPointsAppDelegate.m */; };
+		25187FF912FAD59D00D6DC4D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25187FF712FAD59D00D6DC4D /* MainWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		25187FE112FAD59D00D6DC4D /* LinkedPoints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkedPoints.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		25187FE512FAD59D00D6DC4D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		25187FE712FAD59D00D6DC4D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		25187FE912FAD59D00D6DC4D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		25187FED12FAD59D00D6DC4D /* LinkedPoints-Info.plist */ = {isa = PBXFileReference; path = "LinkedPoints-Info.plist"; sourceTree = "<group>"; };
+		25187FEF12FAD59D00D6DC4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		25187FF112FAD59D00D6DC4D /* LinkedPoints-Prefix.pch */ = {isa = PBXFileReference; path = "LinkedPoints-Prefix.pch"; sourceTree = "<group>"; };
+		25187FF212FAD59D00D6DC4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		25187FF412FAD59D00D6DC4D /* LinkedPointsAppDelegate.h */ = {isa = PBXFileReference; path = LinkedPointsAppDelegate.h; sourceTree = "<group>"; };
+		25187FF512FAD59D00D6DC4D /* LinkedPointsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinkedPointsAppDelegate.m; sourceTree = "<group>"; };
+		25187FF812FAD59D00D6DC4D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		25187FDE12FAD59D00D6DC4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25187FE612FAD59D00D6DC4D /* UIKit.framework in Frameworks */,
+				25187FE812FAD59D00D6DC4D /* Foundation.framework in Frameworks */,
+				25187FEA12FAD59D00D6DC4D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		25187FD612FAD59C00D6DC4D = {
+			isa = PBXGroup;
+			children = (
+				25187FEB12FAD59D00D6DC4D /* LinkedPoints */,
+				25187FE412FAD59D00D6DC4D /* Frameworks */,
+				25187FE212FAD59D00D6DC4D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		25187FE212FAD59D00D6DC4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				25187FE112FAD59D00D6DC4D /* LinkedPoints.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		25187FE412FAD59D00D6DC4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25187FE512FAD59D00D6DC4D /* UIKit.framework */,
+				25187FE712FAD59D00D6DC4D /* Foundation.framework */,
+				25187FE912FAD59D00D6DC4D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		25187FEB12FAD59D00D6DC4D /* LinkedPoints */ = {
+			isa = PBXGroup;
+			children = (
+				25187FF412FAD59D00D6DC4D /* LinkedPointsAppDelegate.h */,
+				25187FF512FAD59D00D6DC4D /* LinkedPointsAppDelegate.m */,
+				25187FF712FAD59D00D6DC4D /* MainWindow.xib */,
+				25187FEC12FAD59D00D6DC4D /* Supporting Files */,
+			);
+			path = LinkedPoints;
+			sourceTree = "<group>";
+		};
+		25187FEC12FAD59D00D6DC4D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				25187FED12FAD59D00D6DC4D /* LinkedPoints-Info.plist */,
+				25187FEE12FAD59D00D6DC4D /* InfoPlist.strings */,
+				25187FF112FAD59D00D6DC4D /* LinkedPoints-Prefix.pch */,
+				25187FF212FAD59D00D6DC4D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		25187FE012FAD59D00D6DC4D /* LinkedPoints */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25187FFC12FAD59D00D6DC4D /* Build configuration list for PBXNativeTarget "LinkedPoints" */;
+			buildPhases = (
+				25187FDD12FAD59D00D6DC4D /* Sources */,
+				25187FDE12FAD59D00D6DC4D /* Frameworks */,
+				25187FDF12FAD59D00D6DC4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LinkedPoints;
+			productName = LinkedPoints;
+			productReference = 25187FE112FAD59D00D6DC4D /* LinkedPoints.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		25187FD812FAD59C00D6DC4D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Indilo Wireless";
+			};
+			buildConfigurationList = 25187FDB12FAD59C00D6DC4D /* Build configuration list for PBXProject "LinkedPoints" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 25187FD612FAD59C00D6DC4D;
+			productRefGroup = 25187FE212FAD59D00D6DC4D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				25187FE012FAD59D00D6DC4D /* LinkedPoints */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		25187FDF12FAD59D00D6DC4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25187FF012FAD59D00D6DC4D /* InfoPlist.strings in Resources */,
+				25187FF912FAD59D00D6DC4D /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		25187FDD12FAD59D00D6DC4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25187FF312FAD59D00D6DC4D /* main.m in Sources */,
+				25187FF612FAD59D00D6DC4D /* LinkedPointsAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		25187FEE12FAD59D00D6DC4D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25187FEF12FAD59D00D6DC4D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		25187FF712FAD59D00D6DC4D /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25187FF812FAD59D00D6DC4D /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		25187FFA12FAD59D00D6DC4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		25187FFB12FAD59D00D6DC4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		25187FFD12FAD59D00D6DC4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LinkedPoints/LinkedPoints-Prefix.pch";
+				INFOPLIST_FILE = "LinkedPoints/LinkedPoints-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		25187FFE12FAD59D00D6DC4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LinkedPoints/LinkedPoints-Prefix.pch";
+				INFOPLIST_FILE = "LinkedPoints/LinkedPoints-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		25187FDB12FAD59C00D6DC4D /* Build configuration list for PBXProject "LinkedPoints" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25187FFA12FAD59D00D6DC4D /* Debug */,
+				25187FFB12FAD59D00D6DC4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25187FFC12FAD59D00D6DC4D /* Build configuration list for PBXNativeTarget "LinkedPoints" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25187FFD12FAD59D00D6DC4D /* Debug */,
+				25187FFE12FAD59D00D6DC4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 25187FD812FAD59C00D6DC4D /* Project object */;
+}
