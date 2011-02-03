@@ -11,8 +11,10 @@
 @interface LinkedPointsAppDelegate : NSObject <UIApplicationDelegate> {
 @private
 
+	UITabBarController *tabBarController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 
 @end
