@@ -30,10 +30,6 @@
 	 */
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return YES;
-}
 - (void)applicationWillTerminate:(UIApplication *)application
 {
 	// Save data if appropriate.

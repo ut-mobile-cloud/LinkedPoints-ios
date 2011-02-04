@@ -59,6 +59,8 @@
 		2536A85812FBE3EC00D7B002 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 2536A85412FBE3EC00D7B002 /* refresh.png */; };
 		2536A85912FBE3EC00D7B002 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2536A85512FBE3EC00D7B002 /* refresh@2x.png */; };
 		25483F0112FC2FB900D91B69 /* UITabBarController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25483F0012FC2FB900D91B69 /* UITabBarController+Additions.m */; };
+		25483F0912FC362100D91B69 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 25483F0712FC362100D91B69 /* next.png */; };
+		25483F0A12FC362100D91B69 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 25483F0812FC362100D91B69 /* play.png */; };
 		25D1DFF212FC121F00674037 /* MCVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D1DFF012FC121F00674037 /* MCVideoController.m */; };
 		25D1DFF312FC121F00674037 /* MCVideoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25D1DFF112FC121F00674037 /* MCVideoController.xib */; };
 /* End PBXBuildFile section */
@@ -147,6 +149,8 @@
 		2536A85512FBE3EC00D7B002 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
 		25483EFF12FC2FB900D91B69 /* UITabBarController+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+Additions.h"; sourceTree = "<group>"; };
 		25483F0012FC2FB900D91B69 /* UITabBarController+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+Additions.m"; sourceTree = "<group>"; };
+		25483F0712FC362100D91B69 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
+		25483F0812FC362100D91B69 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		25D1DFEF12FC121F00674037 /* MCVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCVideoController.h; sourceTree = "<group>"; };
 		25D1DFF012FC121F00674037 /* MCVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCVideoController.m; sourceTree = "<group>"; };
 		25D1DFF112FC121F00674037 /* MCVideoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCVideoController.xib; sourceTree = "<group>"; };
@@ -254,6 +258,8 @@
 		2518800312FADAF200D6DC4D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				25483F0712FC362100D91B69 /* next.png */,
+				25483F0812FC362100D91B69 /* play.png */,
 				2536A85212FBE3EC00D7B002 /* plus.png */,
 				2536A85312FBE3EC00D7B002 /* plus@2x.png */,
 				2536A85412FBE3EC00D7B002 /* refresh.png */,
@@ -412,6 +418,8 @@
 				2536A85812FBE3EC00D7B002 /* refresh.png in Resources */,
 				2536A85912FBE3EC00D7B002 /* refresh@2x.png in Resources */,
 				25D1DFF312FC121F00674037 /* MCVideoController.xib in Resources */,
+				25483F0912FC362100D91B69 /* next.png in Resources */,
+				25483F0A12FC362100D91B69 /* play.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
