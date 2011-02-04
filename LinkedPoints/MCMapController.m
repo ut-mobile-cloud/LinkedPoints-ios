@@ -36,10 +36,12 @@ static NSString *MCConferenceLocationAnnotationIdentifier = @"MCConferenceLocati
 	[self.mapView setCenterCoordinate:self.mapView.region.center animated:NO];
 	// Get the detailsView for user to be able to enter new conference details
 	MCConferenceDetailsController *detailsController = [[MCConferenceDetailsController alloc] initWithNibName:@"MCConferenceDetailsController" bundle:nil];
+	detailsController.conference = newConference;
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.8];
 	[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.view cache:YES];
 	[self.view addSubview:detailsController.view];
+	[detailsController viewWillAppear:YES];
 	[UIView commitAnimations];
 	// TODO : Newly created Conference needs to be saved. Ask Carlos for how the server will handle it
 	[newConference release];

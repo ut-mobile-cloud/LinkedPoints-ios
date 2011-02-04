@@ -63,6 +63,7 @@
 		25483F0A12FC362100D91B69 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 25483F0812FC362100D91B69 /* play.png */; };
 		25483F0F12FC481A00D91B69 /* MCConferenceDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25483F0D12FC481A00D91B69 /* MCConferenceDetailsController.m */; };
 		25483F1012FC481A00D91B69 /* MCConferenceDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25483F0E12FC481A00D91B69 /* MCConferenceDetailsController.xib */; };
+		25CA1DC312FC53A600301466 /* conference.gif in Resources */ = {isa = PBXBuildFile; fileRef = 25CA1DC212FC53A600301466 /* conference.gif */; };
 		25D1DFF212FC121F00674037 /* MCVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D1DFF012FC121F00674037 /* MCVideoController.m */; };
 		25D1DFF312FC121F00674037 /* MCVideoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25D1DFF112FC121F00674037 /* MCVideoController.xib */; };
 /* End PBXBuildFile section */
@@ -156,6 +157,7 @@
 		25483F0C12FC481A00D91B69 /* MCConferenceDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCConferenceDetailsController.h; sourceTree = "<group>"; };
 		25483F0D12FC481A00D91B69 /* MCConferenceDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCConferenceDetailsController.m; sourceTree = "<group>"; };
 		25483F0E12FC481A00D91B69 /* MCConferenceDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCConferenceDetailsController.xib; sourceTree = "<group>"; };
+		25CA1DC212FC53A600301466 /* conference.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conference.gif; sourceTree = "<group>"; };
 		25D1DFEF12FC121F00674037 /* MCVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCVideoController.h; sourceTree = "<group>"; };
 		25D1DFF012FC121F00674037 /* MCVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCVideoController.m; sourceTree = "<group>"; };
 		25D1DFF112FC121F00674037 /* MCVideoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCVideoController.xib; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 		2518800312FADAF200D6DC4D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				25CA1DC212FC53A600301466 /* conference.gif */,
 				25483F0712FC362100D91B69 /* next.png */,
 				25483F0812FC362100D91B69 /* play.png */,
 				2536A85212FBE3EC00D7B002 /* plus.png */,
@@ -429,6 +432,7 @@
 				25483F0912FC362100D91B69 /* next.png in Resources */,
 				25483F0A12FC362100D91B69 /* play.png in Resources */,
 				25483F1012FC481A00D91B69 /* MCConferenceDetailsController.xib in Resources */,
+				25CA1DC312FC53A600301466 /* conference.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

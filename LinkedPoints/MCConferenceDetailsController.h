@@ -8,11 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
-
-@interface MCConferenceDetailsController : UIViewController<UITextFieldDelegate> {
+@class Conference;
+@interface MCConferenceDetailsController : UIViewController<UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
 @private
     
+	UITextField *conferenceTitle;
+	UITextField *place;
+	UITextField *latitude;
+	UITextField *longitude;
+	Conference *conference;
+	UIImageView *image;
+	UITapGestureRecognizer *tapGesture;
 }
+@property (nonatomic, retain) IBOutlet UITextField *conferenceTitle;
+@property (nonatomic, retain) IBOutlet UITextField *place;
+@property (nonatomic, retain) IBOutlet UITextField *latitude;
+@property (nonatomic, retain) IBOutlet UITextField *longitude;
+@property (nonatomic, retain) Conference *conference;
+@property (nonatomic, retain) IBOutlet UIImageView *image;
+
 - (IBAction)donePushed:(id)sender;
 
 @end

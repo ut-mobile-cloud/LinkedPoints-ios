@@ -7,40 +7,83 @@
 //
 
 #import "MCConferenceDetailsController.h"
-
+#import "Conference.h"
 
 @implementation MCConferenceDetailsController
+@synthesize conferenceTitle;
+@synthesize place;
+@synthesize latitude;
+@synthesize longitude;
+@synthesize conference;
+@synthesize image;
+
+- (void)pickImage:(UIGestureRecognizer *)gestureRecognizer
+{
+	DLog(@"Will start picking image");
+	UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+	imagePicker.delegate = self;
+	imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+	[self presentModalViewController:imagePicker animated:YES];
+	[imagePicker release];
+}
+
+#pragma mark UITextFieldDelegate
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+	// Will be called when textField is being asked to resign it's first responder status
+	DLog(@"shouldEndEditing");
+	return YES;
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+	// Called whenever user taps the return button
+	DLog(@"Should return");
+	[textField resignFirstResponder];
+	if(textField == self.conferenceTitle) {
+		DLog(@"and it will");
+//		[textField resignFirstResponder];
+		[self.place becomeFirstResponder];
+	}
+	return YES;
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+	// Called after textField resigns it's first responder status
+	// TODO: possibly put entered text into conference object (or this could be done in donePushed:)
+}
+#pragma mark UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+	[picker dismissModalViewControllerAnimated:YES];
+	self.image.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickImage:)];
     }
     return self;
 }
 
-- (void)dealloc
-{
-    [super dealloc];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark - View lifecycle
+#pragma mark UIViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
-
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self.image addGestureRecognizer:tapGesture];
+	[self.conferenceTitle becomeFirstResponder];
+}
+- (void)viewDidDisappear:(BOOL)animated
+{
+	[super viewDidDisappear:animated];
+	[self.image removeGestureRecognizer:tapGesture];
+}
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -56,10 +99,27 @@
 
 - (IBAction)donePushed:(id)sender {
 	// TODO: Do the saving so that ConferenceManager will have all necessary data after leaving this view
+	self.conference.title = self.conferenceTitle.text;
+	self.conference.place = self.place.text;
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.8];
 	[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.view.superview cache:YES];
 	[self.view removeFromSuperview];
 	[UIView commitAnimations];
 }
+
+#pragma mark NSObject
+
+- (void)dealloc
+{
+	[conference release];
+	[conferenceTitle release];
+	[place release];
+	[latitude release];
+	[longitude release];
+	[image release];
+    [super dealloc];
+}
+
+
 @end
