@@ -18,14 +18,33 @@
 @synthesize moviePlayer;
 
 - (IBAction)playFirst:(id)sender {
+	NSURL *nextMovieURL = [[MCConferenceManager sharedManager] nextVideoForConference:self.conference URL:nil];
+	if(nextMovieURL != nil) {
+		self.moviePlayer.contentURL = nextMovieURL;
+		[self.moviePlayer play];
+	}
 }
 
-- (IBAction)playNext:(id)sender {
+- (IBAction)playNext:(id)sender
+{
+	NSURL *nextMovieURL = [[MCConferenceManager sharedManager] nextVideoForConference:self.conference URL:self.moviePlayer.contentURL];
+	if(nextMovieURL != nil) {
+		self.moviePlayer.contentURL = nextMovieURL;
+		[self.moviePlayer play];
+	} else {
+		DLog(@"No more movies left to play");
+	}
 }
 
 - (void)movieDidFinish:(NSNotification *)notification
 {
 	DLog(@"Movie player did finish");
+	NSURL *nextMovieURL = [[MCConferenceManager sharedManager] nextVideoForConference:self.conference URL:self.moviePlayer.contentURL];
+	if(nextMovieURL != nil) {
+		[self.moviePlayer play];
+	} else {
+		[self.navigationController popViewControllerAnimated:YES];
+	}
 	// TODO: should request next video and start playing. If no next video is available, should return to previous screen
 	//[self.navigationController popViewControllerAnimated:YES];
 }
@@ -71,6 +90,8 @@
 - (void)dealloc
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	[self.moviePlayer stop];
+	[self.moviePlayer release];
 	[conference release];
     [movieViewPlace release];
     [super dealloc];
