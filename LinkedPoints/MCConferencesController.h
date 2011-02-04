@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ASIHTTPRequestDelegate.h"
 
 @class Conferences;
 @interface MCConferencesController : UIViewController <UITableViewDataSource, UITableViewDelegate>{

@@ -18,7 +18,7 @@
 {
 	return [MCConferenceManager sharedManager].conferences;
 }
-- (void)projectsLoaded:(id)sender
+- (void)projectsLoaded:(NSNotification *)notification
 {
 	[self.conferencesTable reloadData];
 }
@@ -64,10 +64,17 @@
 //	[self.navigationController pushViewController:conferenceController animated:YES];
 //	[conferenceController release];
 //}
+
+# pragma mark UIViewController
+- (void)viewDidLoad
+{
+	[super viewDidLoad];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(projectsLoaded:) name:MCFinishedLoadingProjectsNotification object:nil];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(projectsLoaded:) name:MCFinishedLoadingProjectsNotification object:nil];
 	[[MCConferenceManager sharedManager] startLoadingConferences];
 }
 - (void)dealloc
