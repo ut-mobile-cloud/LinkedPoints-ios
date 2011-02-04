@@ -20,7 +20,6 @@ static NSString *MCConferenceLocationAnnotationIdentifier = @"MCConferenceLocati
 - (void)finishedLoadingConferences:(id)sender
 {
 	[self.mapView removeAnnotations:self.mapView.annotations];
-	DLog(@"MapController : manager finished loading projects. Will add them to map");
 	[self.mapView addAnnotations:[MCConferenceManager sharedManager].conferences.conferenceList];
 }
 
@@ -39,10 +38,8 @@ static NSString *MCConferenceLocationAnnotationIdentifier = @"MCConferenceLocati
 
 - (IBAction)addConference:(id)sender
 {
-	DLog(@"Had a longPress - will add pin")
 	if([sender isKindOfClass:UILongPressGestureRecognizer.class]) {
 		if(((UILongPressGestureRecognizer *)sender).state == UIGestureRecognizerStateBegan) {
-			DLog(@"press ended");
 			CGPoint touchPoint = [sender locationInView:self.mapView];
 			CLLocationCoordinate2D touchCoordinate = [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
 			[self addPinToLocation:touchCoordinate];

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @class Conferences;
+@class MPMoviePlayerViewController;
+
 @interface MCConferencesController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
 @private
     

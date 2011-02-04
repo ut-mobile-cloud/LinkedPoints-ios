@@ -7,9 +7,12 @@
 //
 
 #import "MCConferencesController.h"
+#import <MediaPlayer/MediaPlayer.h>
 #import "Conferences.h"
 #import "Conference.h"
 #import "MCConferenceManager.h"
+#import "MCVideoController.h"
+
 @implementation MCConferencesController
 @synthesize conferencesTable;
 
@@ -27,7 +30,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 	NSInteger rows = self.conferences.conferenceList.count;
-	DLog(@"Ridu : %d", rows);
 	return rows;
 }
 
@@ -57,19 +59,32 @@
 // - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 // - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section;
 // - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section;
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//	ConferenceController *conferenceController = [[ConferenceController alloc] initWithNibName:@"ConferenceController" bundle:nil];
-//	conferenceController.conference = [conferences.conferenceList objectAtIndex:indexPath.row];
-//	[self.navigationController pushViewController:conferenceController animated:YES];
-//	[conferenceController release];
-//}
+- (void)movieDidFinish:(id)sender
+{
+	DLog(@"Movie did finish");
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+	MCVideoController *videoController = [[MCVideoController alloc] initWithNibName:@"MCVideoController" bundle:nil];
+	Conference *selectedConference = [[MCConferenceManager sharedManager].conferences.conferenceList objectAtIndex:indexPath.row];
+	videoController.conference = selectedConference;
+	[self.navigationController pushViewController:videoController animated:YES];
+	[videoController release];
+	
+}
 
 # pragma mark UIViewController
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
+	self.navigationItem.title = @"Your conferences";
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(projectsLoaded:) name:MCFinishedLoadingProjectsNotification object:nil];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated

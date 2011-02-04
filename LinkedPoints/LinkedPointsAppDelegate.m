@@ -7,7 +7,7 @@
 //
 
 #import "LinkedPointsAppDelegate.h"
-
+#import "UITabBarController+Additions.h"
 @implementation LinkedPointsAppDelegate
 
 
@@ -30,6 +30,10 @@
 	 */
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
+}
 - (void)applicationWillTerminate:(UIApplication *)application
 {
 	// Save data if appropriate.
