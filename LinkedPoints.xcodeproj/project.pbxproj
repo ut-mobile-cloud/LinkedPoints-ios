@@ -61,6 +61,8 @@
 		25483F0112FC2FB900D91B69 /* UITabBarController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 25483F0012FC2FB900D91B69 /* UITabBarController+Additions.m */; };
 		25483F0912FC362100D91B69 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 25483F0712FC362100D91B69 /* next.png */; };
 		25483F0A12FC362100D91B69 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 25483F0812FC362100D91B69 /* play.png */; };
+		25483F0F12FC481A00D91B69 /* MCConferenceDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25483F0D12FC481A00D91B69 /* MCConferenceDetailsController.m */; };
+		25483F1012FC481A00D91B69 /* MCConferenceDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25483F0E12FC481A00D91B69 /* MCConferenceDetailsController.xib */; };
 		25D1DFF212FC121F00674037 /* MCVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D1DFF012FC121F00674037 /* MCVideoController.m */; };
 		25D1DFF312FC121F00674037 /* MCVideoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25D1DFF112FC121F00674037 /* MCVideoController.xib */; };
 /* End PBXBuildFile section */
@@ -151,6 +153,9 @@
 		25483F0012FC2FB900D91B69 /* UITabBarController+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+Additions.m"; sourceTree = "<group>"; };
 		25483F0712FC362100D91B69 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
 		25483F0812FC362100D91B69 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		25483F0C12FC481A00D91B69 /* MCConferenceDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCConferenceDetailsController.h; sourceTree = "<group>"; };
+		25483F0D12FC481A00D91B69 /* MCConferenceDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCConferenceDetailsController.m; sourceTree = "<group>"; };
+		25483F0E12FC481A00D91B69 /* MCConferenceDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCConferenceDetailsController.xib; sourceTree = "<group>"; };
 		25D1DFEF12FC121F00674037 /* MCVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCVideoController.h; sourceTree = "<group>"; };
 		25D1DFF012FC121F00674037 /* MCVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCVideoController.m; sourceTree = "<group>"; };
 		25D1DFF112FC121F00674037 /* MCVideoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCVideoController.xib; sourceTree = "<group>"; };
@@ -239,6 +244,9 @@
 				25D1DFF112FC121F00674037 /* MCVideoController.xib */,
 				25483EFF12FC2FB900D91B69 /* UITabBarController+Additions.h */,
 				25483F0012FC2FB900D91B69 /* UITabBarController+Additions.m */,
+				25483F0C12FC481A00D91B69 /* MCConferenceDetailsController.h */,
+				25483F0D12FC481A00D91B69 /* MCConferenceDetailsController.m */,
+				25483F0E12FC481A00D91B69 /* MCConferenceDetailsController.xib */,
 			);
 			path = LinkedPoints;
 			sourceTree = "<group>";
@@ -420,6 +428,7 @@
 				25D1DFF312FC121F00674037 /* MCVideoController.xib in Resources */,
 				25483F0912FC362100D91B69 /* next.png in Resources */,
 				25483F0A12FC362100D91B69 /* play.png in Resources */,
+				25483F1012FC481A00D91B69 /* MCConferenceDetailsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +466,7 @@
 				2518808E12FB051500D6DC4D /* MCConferenceManager.m in Sources */,
 				25D1DFF212FC121F00674037 /* MCVideoController.m in Sources */,
 				25483F0112FC2FB900D91B69 /* UITabBarController+Additions.m in Sources */,
+				25483F0F12FC481A00D91B69 /* MCConferenceDetailsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
