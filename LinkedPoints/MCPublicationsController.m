@@ -7,38 +7,75 @@
 //
 
 #import "MCPublicationsController.h"
+#import "ASIHTTPRequest.h"
+#import "Publication.h"
+#import "Publications.h"
+#import "PublicationsParser.h"
 
+static int HTTP_STATUS_CODE_OK = 200;
+static NSString *MCPublicationsServletURL = @"http://ec2-46-137-15-183.eu-west-1.compute.amazonaws.com:8080/EC2RunInstance/GetPublications";
 
 @implementation MCPublicationsController
+@synthesize publicationsTable;
+@synthesize publications;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+#pragma mark ASIHTTPRequestDelegate
+- (void)requestFailed:(ASIHTTPRequest *)request
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+}
+
+- (void)requestFinished:(ASIHTTPRequest *)request
+{
+	if([request responseStatusCode] == HTTP_STATUS_CODE_OK) {
+		self.publications = [PublicationsParser loadPublicationsFromString:[request responseString]];
+		[self.publicationsTable reloadData];
+	}	
+}
+
+#pragma mark UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+	NSInteger rows = self.publications.publicationList.count;
+	return rows;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+	NSInteger sections = 1;
+	return sections;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"PublicationCellIdentifier";
+	
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+//        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:cellIdentifier] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
-    return self;
+	
+    Publication *publication = [self.publications.publicationList objectAtIndex:indexPath.row];
+	cell.textLabel.text = publication.title;
+	cell.detailTextLabel.text = publication.date;
+	
+    return cell;
 }
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark - View lifecycle
+#pragma mark UITableViewDelegate
+// All method optional
+// - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+// - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section;
+// - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section;
+// - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:MCPublicationsServletURL]];
+	request.delegate = self;
+	[request startAsynchronous];
 }
 
 - (void)viewDidUnload
@@ -53,5 +90,12 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-
+#pragma mark UIViewController
+#pragma mark NSObject
+- (void)dealloc
+{
+	[publications release];
+    [publicationsTable release];
+    [super dealloc];
+}
 @end

@@ -10,6 +10,7 @@
 
 
 @implementation MCMapController
+@synthesize mapView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -22,6 +23,7 @@
 
 - (void)dealloc
 {
+    [mapView release];
     [super dealloc];
 }
 

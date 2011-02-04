@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ASIHTTPRequestDelegate.h"
 
-
-@interface MCPublicationsController : UIViewController {
+@class Publications;
+@interface MCPublicationsController : UIViewController<UITableViewDataSource, UITableViewDelegate, ASIHTTPRequestDelegate> {
 @private
-    
+    Publications *publications;
+	UITableView *publicationsTable;
 }
-
+@property (nonatomic, retain) IBOutlet UITableView *publicationsTable;
+@property (nonatomic, retain) Publications *publications;
 @end

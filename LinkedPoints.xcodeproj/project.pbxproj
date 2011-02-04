@@ -49,6 +49,11 @@
 		2518805F12FADFD200D6DC4D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2518805E12FADFD200D6DC4D /* SystemConfiguration.framework */; };
 		2518806112FADFDD00D6DC4D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2518806012FADFDD00D6DC4D /* MediaPlayer.framework */; };
 		2518806312FADFEE00D6DC4D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2518806212FADFEE00D6DC4D /* libxml2.dylib */; };
+		2518806612FAE27B00D6DC4D /* Publication.m in Sources */ = {isa = PBXBuildFile; fileRef = 2518806512FAE27B00D6DC4D /* Publication.m */; };
+		2518806912FAE2AF00D6DC4D /* Publications.m in Sources */ = {isa = PBXBuildFile; fileRef = 2518806812FAE2AF00D6DC4D /* Publications.m */; };
+		2518806C12FAE2C500D6DC4D /* PublicationsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2518806B12FAE2C500D6DC4D /* PublicationsParser.m */; };
+		2518806F12FAE7D400D6DC4D /* MCParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2518806E12FAE7D400D6DC4D /* MCParser.m */; };
+		2518808E12FB051500D6DC4D /* MCConferenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2518808D12FB051500D6DC4D /* MCConferenceManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +124,16 @@
 		2518805E12FADFD200D6DC4D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2518806012FADFDD00D6DC4D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		2518806212FADFEE00D6DC4D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		2518806412FAE27B00D6DC4D /* Publication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Publication.h; sourceTree = "<group>"; };
+		2518806512FAE27B00D6DC4D /* Publication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Publication.m; sourceTree = "<group>"; };
+		2518806712FAE2AF00D6DC4D /* Publications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Publications.h; sourceTree = "<group>"; };
+		2518806812FAE2AF00D6DC4D /* Publications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Publications.m; sourceTree = "<group>"; };
+		2518806A12FAE2C500D6DC4D /* PublicationsParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicationsParser.h; sourceTree = "<group>"; };
+		2518806B12FAE2C500D6DC4D /* PublicationsParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicationsParser.m; sourceTree = "<group>"; };
+		2518806D12FAE7D400D6DC4D /* MCParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCParser.h; sourceTree = "<group>"; };
+		2518806E12FAE7D400D6DC4D /* MCParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCParser.m; sourceTree = "<group>"; };
+		2518808C12FB051500D6DC4D /* MCConferenceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCConferenceManager.h; sourceTree = "<group>"; };
+		2518808D12FB051500D6DC4D /* MCConferenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCConferenceManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +212,8 @@
 				2518801A12FADC2700D6DC4D /* MCPublicationsController.h */,
 				2518801B12FADC2700D6DC4D /* MCPublicationsController.m */,
 				2518801C12FADC2700D6DC4D /* MCPublicationsController.xib */,
+				2518808C12FB051500D6DC4D /* MCConferenceManager.h */,
+				2518808D12FB051500D6DC4D /* MCConferenceManager.m */,
 			);
 			path = LinkedPoints;
 			sourceTree = "<group>";
@@ -235,6 +252,14 @@
 				2518802312FADEC800D6DC4D /* Conferences.m */,
 				2518802412FADEC800D6DC4D /* ConferencesParser.h */,
 				2518802512FADEC800D6DC4D /* ConferencesParser.m */,
+				2518806412FAE27B00D6DC4D /* Publication.h */,
+				2518806512FAE27B00D6DC4D /* Publication.m */,
+				2518806712FAE2AF00D6DC4D /* Publications.h */,
+				2518806812FAE2AF00D6DC4D /* Publications.m */,
+				2518806A12FAE2C500D6DC4D /* PublicationsParser.h */,
+				2518806B12FAE2C500D6DC4D /* PublicationsParser.m */,
+				2518806D12FAE7D400D6DC4D /* MCParser.h */,
+				2518806E12FAE7D400D6DC4D /* MCParser.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -387,6 +412,11 @@
 				2518805112FADF2800D6DC4D /* GDataXMLNode.m in Sources */,
 				2518805212FADF2800D6DC4D /* Reachability.m in Sources */,
 				2518805312FADF2800D6DC4D /* RegexKitLite.m in Sources */,
+				2518806612FAE27B00D6DC4D /* Publication.m in Sources */,
+				2518806912FAE2AF00D6DC4D /* Publications.m in Sources */,
+				2518806C12FAE2C500D6DC4D /* PublicationsParser.m in Sources */,
+				2518806F12FAE7D400D6DC4D /* MCParser.m in Sources */,
+				2518808E12FB051500D6DC4D /* MCConferenceManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +530,7 @@
 				25187FFE12FAD59D00D6DC4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

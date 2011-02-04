@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ASIHTTPRequestDelegate.h"
 
-
-@interface MCConferencesController : UIViewController {
+@class Conferences;
+@interface MCConferencesController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
 @private
     
+	UITableView *conferencesTable;
 }
+@property (nonatomic, retain) IBOutlet UITableView *conferencesTable;
+@property (nonatomic, readonly) Conferences *conferences;
 
 @end
