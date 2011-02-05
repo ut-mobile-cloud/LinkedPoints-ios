@@ -21,10 +21,12 @@
 {
 	return [MCConferenceManager sharedManager].conferences;
 }
+
 - (void)projectsLoaded:(NSNotification *)notification
 {
 	[self.conferencesTable reloadData];
 }
+
 #pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -40,14 +42,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"<#MyCell#>";
+    static NSString *cellIdentifier = @"ConferenceCellReuseIdentifier";
 	
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:cellIdentifier] autorelease];
     }
 	Conference *conference = [self.conferences.conferenceList objectAtIndex:indexPath.row];
-	DLog(@"made cell for conference : %@", conference.title);
 	cell.textLabel.text = conference.title;
 	
     return cell;
@@ -55,17 +56,14 @@
 
 
 #pragma mark UITableViewDelegate
-// All method optional
-// - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
-// - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section;
-// - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section;
+
 - (void)movieDidFinish:(id)sender
 {
 	DLog(@"Movie did finish");
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
 	MCVideoController *videoController = [[MCVideoController alloc] initWithNibName:@"MCVideoController" bundle:nil];
 	Conference *selectedConference = [[MCConferenceManager sharedManager].conferences.conferenceList objectAtIndex:indexPath.row];
 	videoController.conference = selectedConference;
@@ -75,6 +73,7 @@
 }
 
 # pragma mark UIViewController
+
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
@@ -95,6 +94,9 @@
 	[super viewWillAppear:animated];
 	[[MCConferenceManager sharedManager] startLoadingConferences];
 }
+
+#pragma mark NSObject
+
 - (void)dealloc
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];

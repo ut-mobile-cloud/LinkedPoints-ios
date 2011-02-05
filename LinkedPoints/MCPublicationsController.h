@@ -15,6 +15,8 @@
     Publications *publications;
 	UITableView *publicationsTable;
 }
+
 @property (nonatomic, retain) IBOutlet UITableView *publicationsTable;
 @property (nonatomic, retain) Publications *publications;
+
 @end

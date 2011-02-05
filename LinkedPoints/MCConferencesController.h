@@ -16,6 +16,7 @@
     
 	UITableView *conferencesTable;
 }
+
 @property (nonatomic, retain) IBOutlet UITableView *conferencesTable;
 @property (nonatomic, readonly) Conferences *conferences;
 

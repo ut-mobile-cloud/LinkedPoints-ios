@@ -15,8 +15,11 @@
 	UIBarButtonItem *addConferenceButton;
 	UILongPressGestureRecognizer *longPress;
 }
+
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *addConferenceButton;
+
 - (IBAction)goToTartu:(id)sender;
 - (IBAction)addConference:(id)sender;
+
 @end

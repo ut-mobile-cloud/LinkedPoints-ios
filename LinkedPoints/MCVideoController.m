@@ -87,6 +87,8 @@
     return YES;
 }
 
+#pragma mark NSObject
+
 - (void)dealloc
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];

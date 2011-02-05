@@ -20,8 +20,10 @@ static NSString *MCPublicationsServletURL = @"http://ec2-46-137-15-183.eu-west-1
 @synthesize publications;
 
 #pragma mark ASIHTTPRequestDelegate
+
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
+	// TODO: Handle the situation when server is for some reason unable to respond properly
 }
 
 - (void)requestFinished:(ASIHTTPRequest *)request
@@ -51,7 +53,6 @@ static NSString *MCPublicationsServletURL = @"http://ec2-46-137-15-183.eu-west-1
 	
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-//        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:cellIdentifier] autorelease];
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
 	
@@ -62,13 +63,7 @@ static NSString *MCPublicationsServletURL = @"http://ec2-46-137-15-183.eu-west-1
     return cell;
 }
 
-
-#pragma mark UITableViewDelegate
-// All method optional
-// - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
-// - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section;
-// - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section;
-// - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+#pragma mark UIViewController
 
 - (void)viewDidLoad
 {
@@ -90,7 +85,7 @@ static NSString *MCPublicationsServletURL = @"http://ec2-46-137-15-183.eu-west-1
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-#pragma mark UIViewController
+
 #pragma mark NSObject
 - (void)dealloc
 {

@@ -28,6 +28,7 @@
 }
 
 #pragma mark UITextFieldDelegate
+
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
 	// Will be called when textField is being asked to resign it's first responder status
@@ -51,7 +52,9 @@
 	// Called after textField resigns it's first responder status
 	// TODO: possibly put entered text into conference object (or this could be done in donePushed:)
 }
+
 #pragma mark UIImagePickerControllerDelegate
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
 	[picker dismissModalViewControllerAnimated:YES];
