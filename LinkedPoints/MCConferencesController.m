@@ -3,7 +3,7 @@
 //  LinkedPoints
 //
 //  Created by Madis Nõmme on 2/3/11.
-//  Copyright 2011 Indilo Wireless. All rights reserved.
+//  Copyright 2011 MobileCloud. All rights reserved.
 //
 
 #import "MCConferencesController.h"
