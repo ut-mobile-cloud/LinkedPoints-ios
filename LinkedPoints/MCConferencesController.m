@@ -46,10 +46,19 @@
 	
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:cellIdentifier] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
 	Conference *conference = [self.conferences.conferenceList objectAtIndex:indexPath.row];
 	cell.textLabel.text = conference.title;
+	cell.detailTextLabel.text = conference.place;
+	// TODO: load this image from cloud. Ideally should be done like so
+	// UIImageView *conferenceImage = [[UIImageView alloc] initWithImage:[conference.image]];
+	// Right now placeholder image will be used
+	UIImage *contentViewImage = [UIImage imageNamed:@"conference.gif"];
+	UIImageView *conferenceImageView = [[UIImageView alloc] initWithImage:contentViewImage];
+	conferenceImageView.frame = CGRectMake(0, 0, 40, 40);
+	cell.accessoryView = conferenceImageView;
+	[conferenceImageView release];
 	
     return cell;
 }

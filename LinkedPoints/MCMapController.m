@@ -27,24 +27,29 @@ static NSString *MCConferenceLocationAnnotationIdentifier = @"MCConferenceLocati
 - (void)addPinToLocation:(CLLocationCoordinate2D)location
 {
 	Conference *newConference = [[Conference alloc] init];
-	newConference.title = @"See";
-	newConference.place = @"Teine";
 	newConference.latitude = location.latitude;
 	newConference.longitude = location.longitude;
-	[[MCConferenceManager sharedManager].conferences.conferenceList addObject:newConference];
-	[self.mapView addAnnotation:newConference];
-	[self.mapView setCenterCoordinate:self.mapView.region.center animated:NO];
 	// Get the detailsView for user to be able to enter new conference details
 	MCConferenceDetailsController *detailsController = [[MCConferenceDetailsController alloc] initWithNibName:@"MCConferenceDetailsController" bundle:nil];
 	detailsController.conference = newConference;
+	
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.8];
 	[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.view cache:YES];
 	[self.view addSubview:detailsController.view];
 	[detailsController viewWillAppear:YES];
 	[UIView commitAnimations];
+	
+//	[[MCConferenceManager sharedManager] addConference:newConference withImage:nil progressDelegate:nil];
 	// TODO : Newly created Conference needs to be saved. Ask Carlos for how the server will handle it
 	[newConference release];
+}
+
+- (void)updateMapView:(id)object
+{
+	DLog(@"Someone updated conferences. I need to update the map");
+	[self.mapView removeAnnotations:self.mapView.annotations];
+	[self.mapView addAnnotations:[MCConferenceManager sharedManager].conferences.conferenceList];
 }
 
 - (IBAction)addConference:(id)sender
@@ -76,10 +81,16 @@ static NSString *MCConferenceLocationAnnotationIdentifier = @"MCConferenceLocati
 	if(annotationView == nil) {
 		annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:MCConferenceLocationAnnotationIdentifier];
 	}
-	DLog(@"Created annotation : %@", annotation.title);
 	annotationView.canShowCallout = YES;
 	annotationView.animatesDrop = YES;
 	[annotationView setPinColor: MKPinAnnotationColorGreen];
+	// Add image to pin
+	UIImage *contentViewImage = [UIImage imageNamed:@"conference.gif"];
+	UIImageView *conferenceImageView = [[UIImageView alloc] initWithImage:contentViewImage];
+	conferenceImageView.frame = CGRectMake(0, 0, 35, 35);
+	annotationView.leftCalloutAccessoryView = conferenceImageView;
+	[conferenceImageView release];
+	
 	return annotationView;
 }
 
@@ -91,6 +102,7 @@ static NSString *MCConferenceLocationAnnotationIdentifier = @"MCConferenceLocati
 	longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(addConference:)];
 	longPress.minimumPressDuration = 1;
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(finishedLoadingConferences:) name:MCFinishedLoadingProjectsNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateMapView:) name:MCConferencesDidChangeNotification object:nil];
 	[self.mapView addGestureRecognizer:longPress];
 	[[MCConferenceManager sharedManager] startLoadingConferences];
 }

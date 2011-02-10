@@ -19,6 +19,7 @@
 	Conference *conference;
 	UIImageView *image;
 	UITapGestureRecognizer *tapGesture;
+	BOOL didSelectNewImage;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *conferenceTitle;
@@ -29,5 +30,6 @@
 @property (nonatomic, retain) IBOutlet UIImageView *image;
 
 - (IBAction)donePushed:(id)sender;
+- (IBAction)cancelPushed:(id)sender;
 
 @end
